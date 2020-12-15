@@ -15,8 +15,8 @@ Se especificado, **flags** indica os marcadores que podem ser adicionados, ou se
 ### Tabela de exemplos/exercícios básicos classificados por nível de dificuldade:
 |  Nome   |           Link            | Nível   |
 | ------  |          ------           | ------- | 
-| Exemp01 | [Exemplo](./exemplo01.js) | Fácil   |
-| Exemp02 | [Exemplo](./exemplo02.js) | Fácil   |
+| Exemp01 | [Exemplo](./exemp01.js) | Fácil   |
+| Exemp02 | [Exemplo](./exemp02.js) | Fácil   |
 |         |                           |         | 
 
 
