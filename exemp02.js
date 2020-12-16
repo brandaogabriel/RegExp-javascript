@@ -5,7 +5,7 @@ const { texto } = require('./base');
 // Caso as duas estejam presentes, as mesmas são retornadas. 
 const regExp1 = /(lorem|ipsum)/gi;
 
-// math () - O método recupera o resultado da correspondência de uma string
+// match () - O método recupera o resultado da correspondência de uma string e retorna todas as correspondencias encontradas 
 // com uma expressão regular.
 console.log(texto.match(regExp1));
 
