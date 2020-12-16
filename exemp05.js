@@ -3,7 +3,7 @@
 const { alfabeto } = require('./base');
 
 // [abc] -> representa um conjunto
-// ^ -> representa negação
+// [^] -> representa negação
 // Range [0-9] range de 0 a 9
 
 console.log('Exemplo 01: ');

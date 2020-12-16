@@ -1,16 +1,4 @@
 // Quantificadores
-
-// * (opcional) 0 ou n {0, }
-// + (obrigatório) 1 ou n
-// ? (opcional) 0 ou 1 
-// \ Caractere de escape
-
-// {n, m} minimo e máximo.
-// Ex: {10, } no minimo 10
-// Ex: {, 10} de 0 a 10
-// Ex: {5, 10} de 5 a 10
-// Ex: {1} apenas 1 vez
-
 const { texto, arquivos } = require('./base');
 
 
