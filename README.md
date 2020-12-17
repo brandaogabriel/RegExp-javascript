@@ -1,4 +1,4 @@
-# RegEx javascript
+# RegExp javascript
 De maneira geral, expressões regulares em JavaScript são utilizadas para filtrar dado(s) de uma String. 
 O repositório em si contém apenas alguns dos casos mais utilizados com expressões regulares, para aprofundamento do conteúdo, leia a [documentação](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp) oficial.
 
@@ -10,6 +10,53 @@ Se especificado, **flags** indica os marcadores que podem ser adicionados, ou se
 
 ### `i`
  - ignora maiúsc./minúsc.; Se a flag u estiver ativa, deve ser utilizado o Unicode case folding
+
+### `m`
+  - multilinha; trata caracteres de início e fim (^ e $) ao operar sobre múltiplas linhas (ou seja, corresponder o início ou fim de cada linha (delimitado por \n ou \r), e não apenas o começo ou fim de toda a string de entrada)
+
+## Caracteres 
+### `.`
+ - (O ponto) corresponde um único caracter qualquer exceto os caracteres de nova linha: \n, \r, \u2028 ou \u2029.
+ - Note que a flag multilinha m não muda o comportamento do ponto. Então para corresponder um padrão por múltiplas linhas, o conjunto de caracteres [^] pode ser usado, que corresponderá qualquer caractere, incluindo novas linhas.
+ - Por exemplo, /.y/ corresponde "my" e "ay", mas não "yes", em "yes make my day".
+
+### `\d`
+ - Corresponde um caractere de dígito no alfabeto basic Latin. Equivalente a [0-9].
+ - Por exemplo, /\d/ ou /[0-9]/ corresponde "2" em "B2 é o número da suíte".
+
+### `\D`
+ 	- Encontra correspondência com um caractere que não seja número. Equivalente a [^0-9].
+  - Por exemplo,  /\D/ ou /[^0-9]/ econtra correspondente 'C' em "C3 está ativada."
+
+### `\w`
+ - Corresponde qualquer caractere alfanumérico do alfabeto basic Latin, incluindo o underline. Equivalente a [A-Za-z0-9_].
+ - Por exemplo, /\w/ corresponde "a" em "apple", "5" em "$5.28", e "3" em "3D".
+
+### `\W`
+ - Corresponde qualquer caractere que não é um alfanumérico do alfabeto basic Latin. Equivalente a [^A-Za-z0-9_].
+ - Por exemplo, /\W/ ou /[^A-Za-z0-9_]/ corresponde "%" em "50%".
+
+### `\s`
+ - Corresponde um único caractere de espaço em branco, incluindo espaço, tabulação (tab), quebra de página, nova linha (LF) e outros espaços Unicode. Equivalente a [ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004\u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​\u202f\u205f​\u3000].
+ - Por exemplo, /\s\w*/ corresponde " bar" em "foo bar".
+
+### `\S`
+ - Corresponde um único caractere que não seja um espaço em branco. Equivalente a [^ \f\n\r\t\v​\u00a0\u1680​\u180e\u2000​\u2001\u2002​\u2003\u2004\u2005\u2006​\u2007\u2008​\u2009\u200a​\u2028\u2029​\u202f\u205f​\u3000].
+ - Por exemplo, /\S\w*/ corresponde "foo" em "foo bar".
+
+## Conjunto
+### `[abc]`
+ - Um conjunto de caracteres. Pesquisa correspondência para qualquer um dos caracteres entre colchetes. Você pode especificar um intervalo de caracteres usando hífen. Caracteres especiais (como o ponto (.) e o asterisco(*)) não tem significado algum quando está dentro de um conjunto de caracteres. Não necessita utilizar escape neles. Mas, se utilizar escape também irá funcionar.
+ - Por exemplo, [abcd] é o mesmo que [a-d]. Com a expressão será encontrado o 'b' em "beijo" e o 'c' em "chop". A expressão /[a-z.]+/ e /[\w.]+/ ambos encontraram as letras que formam "test.i.ng".
+
+## Limites
+### `^`
+ - Corresponde o início de uma entrada. Se a flag multilinha é utilizada, também corresponde imediatamente após um caractere de quebra de linha.
+ - Por exemplo, /^A/ não corresponde o "A" em "an A", mas corresponde o primeiro "A" em "An A".
+
+### `$`
+ - Corresponde o fim de uma entrada. Se a flag multilinha é utilizada, também corresponde imediatamente antes de um caractere de quebra de linha.
+ - Por exemplo, /o$/ não corresponde o "o" em "cantor", mas corresponde em "canto".
 
 ## Quantificadores 
 
@@ -46,11 +93,6 @@ Se especificado, **flags** indica os marcadores que podem ser adicionados, ou se
 | {n,}              | {n,}?           | Quantificador: n ou mais     |
 | {n,m}             | {n,m}?          | Quantificador: entre n e m   |
 
-## Conjunto
-### `[abc]`
- - Um conjunto de caracteres. Pesquisa correspondência para qualquer um dos caracteres entre colchetes. Você pode especificar um intervalo de caracteres usando hífen. Caracteres especiais (como o ponto (.) e o asterisco(*)) não tem significado algum quando está dentro de um conjunto de caracteres. Não necessita utilizar escape neles. Mas, se utilizar escape também irá funcionar.
- - Por exemplo, [abcd] é o mesmo que [a-d]. Com a expressão será encontrado o 'b' em "beijo" e o 'c' em "chop". A expressão /[a-z.]+/ e /[\w.]+/ ambos encontraram as letras que formam "test.i.ng".
-
 
 ## Exercícios
 ### Tabela de exemplos/exercícios básicos classificados por nível de dificuldade:
@@ -62,6 +104,9 @@ Se especificado, **flags** indica os marcadores que podem ser adicionados, ou se
 | Exemp04 | [Exemplo](./exemp04.js)   | Médio   | 
 | Exemp05 | [Exemplo](./exemp05.js)   | Médio   | 
 | Exercício01 | [Exercício](./exercicio01.js) | Difícil | 
+| Exemp06 | [Exemplo](./exemp06.js)   | Fácil   | 
+| Exemp07 | [Exemplo](./exemp07.js)   | Difícil | 
+| Exemp08 | [Exemplo](./exemp08.js)   | Difícil | 
 
 
 ## Fonte

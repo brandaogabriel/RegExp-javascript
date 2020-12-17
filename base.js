@@ -37,6 +37,11 @@ const arquivos = [
 ];
 
 const html = '<p>Olá mundo </p> <p>Olá de novo</p>';
+const html2 = `<p
+ data-teste='teste' 
+ class="teste teste">
+ Olá mundo
+</p> <p>Olá de novo</p> <div>Sou a div</div>`;
 
 const alfabeto = 
   'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz ™ ƒ 0123456789 ƒ';
@@ -45,6 +50,12 @@ const cpfs = `
   Os CPFS são:
   254.224.877-45 215.978.456-12 
   047.258.369-96 963.987.321-00
+`;
+
+const cpfs2 = `254.224.877-45
+215.978.456-12
+047.258.369-96
+963.987.32a-00
 `;
 
 const ips = `
@@ -56,6 +67,15 @@ const ips = `
   255.255.255.255
 `;
 
+const lookahead = `
+ONLINE  192.168.0.1 ABCDEF inactive
+OFFLINE  192.168.0.2 ABCDEF active
+ONLINE  192.168.0.3 ABCDEF active
+ONLINE  192.168.0.4 ABCDEF active
+OFFLINE  192.168.0.5 ABCDEF active
+OFFLINE  192.168.0.6 ABCDEF inactive
+`;
+
 module.exports = {
   texto,
   arquivos,
@@ -63,4 +83,7 @@ module.exports = {
   alfabeto,
   cpfs,
   ips,
+  cpfs2,
+  html2,
+  lookahead,
 }

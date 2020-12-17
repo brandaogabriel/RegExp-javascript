@@ -1,5 +1,7 @@
 const { cpfs, ips } = require ('./base');
 
+
+// 1. Exercício: Filtrar os cpfs do arquivo base
 const cpf = /[0-9]{3}\.[0-9]{3}\.[0-9]{3}\-[0-9]{2}/g;
 
 //Alternativa 1
@@ -15,6 +17,7 @@ console.log(cpfs.match(cpfAlter)); // Saída: ['254.224.877-45', '215.978.456-12
 console.log(cpfs.match(cpfAlter2)); // Saída: ['254.224.877-45', '215.978.456-12', '047.258.369-96', '963.987.321-00']
 
 
+// 2. Exercício: Filtrar os ips corretamente do arquivo base
 console.log('\nIPS:');
 
 // 250 - 255  = 25[0-5]
